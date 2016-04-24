@@ -8,7 +8,7 @@
       <script type="text/javascript" src="scripts/jquery-2.2.3.js"></script>
        <script type="text/javascript" src="scripts/addblog.js"></script>
      <script type="text/javascript" src="scripts/common.js"></script>
-
+     
   </head>
 
   <body>
@@ -50,7 +50,7 @@
 
 
 
-
+       
         <!-- Form-->
 <div class="box">
   <div class="left" id="left">
@@ -165,5 +165,5 @@
   <!-- END PAGE SOURCE -->
   <div align=center>This Website Is under Development By <a href='index.jsp'>Samiksha And Utakarsh</a></div>
   </body>
-
+ 
 </html>

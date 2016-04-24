@@ -1,9 +1,9 @@
 $(document).ready(function() {
-	 //alert("I am here ");
+	// alert("I am here ");
 	 var id = window.location.href.slice(window.location.href.indexOf('?') + 1).split('=');
-
+		
 		if (typeof id[1] === "undefined") {
-		//	alert (" I am not defined");
+			//alert (" I am not defined");
 		} else {
 			startPoint = id[1];
 		}
@@ -12,7 +12,7 @@ $(document).ready(function() {
 		    dataType: 'json', // jQuery will parse the response as JSON
 		    success: function (data) {
 		    	blogcount =  data.length; 
-
+		    	
 		    	 endPoint = (startPoint + PageSize);
 
 		 	    if (endPoint > blogcount) {
@@ -30,14 +30,14 @@ $(document).ready(function() {
 		    		blogTime= dataFromTimestamp(data[i].postdate),
 		    	     dateTxt = blogTime + "| Posted By " + username,
 		    	     idn=document.createTextNode(dateTxt);
-
+		    		
 		    		 $(its).attr('class','small');
 		    		 its.appendChild(idn);
 		    		 ith.appendChild(ita);
 		    		 ith.appendChild(brpoint);
 		    		 ith.appendChild(its);
-
-
+		    		
+			    	 
 			    	 var itp = document.createElement('p'),
 			    	 ipt = document.createTextNode((data[i].content).substr(0, 255)),
 		    	     itp2 = document.createElement('p'),
@@ -45,21 +45,21 @@ $(document).ready(function() {
 		    	     ipt2 = document.createTextNode("Read More"),
 		    	     brpoint2 =document.createElement('br'),
 		    	      blogid= data[i].blogid;
-
+			    	 
 			    	 itp.appendChild(ipt);
 			    	  $(ita2).attr('href','#');
 			    	  $(ita2).attr('class','mylink');
 			    	  $(ita2).attr('id', blogid);
 			    	  ita2.appendChild(ipt2);
 			    	 itp2.appendChild(ita2);
-
-
+			    	 
+			    	
 			    	  $("#left").append(ith).append(itp).append(brpoint2).append(itp2);
-
+		    	
 		        };
 		        if(startPoint != 0){
 	    			startPoint = endPoint - PageSize ;
-
+	    			
 	    			var  brpoint3 =document.createElement('br'),
 			        preva= document.createElement('a');
 
@@ -72,7 +72,7 @@ $(document).ready(function() {
 	    	}
 		    	if(endPoint < blogcount){
 		    			startPoint = endPoint ;
-
+		    			
 		    			var  brpoint3 =document.createElement('br'),
 				        nexta= document.createElement('a');
 
@@ -83,25 +83,25 @@ $(document).ready(function() {
 				       	nexta.appendChild(nextT);
 				       	$("#left").append(brpoint3).append(nexta);
 		    	}
-
-
+		       
+	    		
 		    }
 		});
-
+	
 	 $(document).on("click", ".mylink", function(event) {
 	       event.preventDefault();    //prevent default action of <a>
 	       var id = $(this).attr('id');
-	        window.location.href = 'viewblog.jsp?id='+id;
+	        window.location.href = 'viewblog.jsp?id='+id; 
 
 	});
 	 $(document).on("click", ".prev", function(event) {
 	       event.preventDefault();    //prevent default action of <a>
-	        window.location.href = 'viewnextblogs.jsp?id='+startPoint;
+	        window.location.href = 'viewnextblogs.jsp?id='+startPoint; 
 
 	});
 	 $(document).on("click", ".next", function(event) {
 	       event.preventDefault();    //prevent default action of <a>
-	        window.location.href = 'viewallblogs.jsp?id='+startPoint;
+	        window.location.href = 'viewallblogs.jsp?id='+startPoint; 
 
 	});
 });

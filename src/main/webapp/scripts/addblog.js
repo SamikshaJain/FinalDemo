@@ -1,5 +1,5 @@
 $(document).ready(function() {
-//	alert("Insdie js");
+	//alert("Insdie js");
         $("form").submit(function (e) {
         	//alert("Submit form");
           var titleTxt = document.getElementById("posttitle").value;

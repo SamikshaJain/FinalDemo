@@ -15,17 +15,17 @@
   <script>
   $(document).ready(function() {
     //alert (" Register");
-
+   
       $("form").submit(function (e) {
         	var user = document.getElementById("username").value;
-
+  
         var pwd = document.getElementById("password").value;
-
+  
         var mail = document.getElementById("email").value;
 
         var data = JSON.stringify({name:user, email: mail, password: pwd});
-
-        event.preventDefault();
+        
+        event.preventDefault(); 
         $.ajax({
             type : "POST",
             url : 'cmad/users',
@@ -33,16 +33,16 @@
             contentType: "application/json",
             data : data,
             success : function(result) {
-          		  //alert ("I am registered");
+          		 // alert ("I am registered");
           		  window.location="login.jsp";
-
+          	  
   },
 
   });
         });
-
-
-
+     
+  
+    
 });
 
   </script>
@@ -224,9 +224,13 @@
                 minlength: "Name should be at least {0} characters long" // <-- removed underscore
             }
         },
-
+       
     });
 
     alert (" Submit");
     </script>
     </html>
+  
+  
+  
+  

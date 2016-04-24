@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	var id = window.location.href.slice(window.location.href.indexOf('?') + 1).split('=');
 	//alert(id[1]);
-
+	
 	$.ajax({
 
 	    url: 'cmad/blogs/limit/'+ id[1], // returns "[1,2,3,4,5,6]"
@@ -10,7 +10,7 @@ $(document).ready(function() {
 
 	    success: function (data) {
 
-	    blogcount =  data.length;
+	    blogcount =  data.length; 
 
 	    endPoint = (startPoint + PageSize);
 
@@ -20,7 +20,7 @@ $(document).ready(function() {
 
 	    }
 
-	    //alert(startPoint);
+	   // alert(startPoint);
 
 	        for (i = 0; i <  blogcount ;i++){
 
@@ -42,7 +42,7 @@ $(document).ready(function() {
 
 	   	    its=document.createTextNode(dateTxt);
 
-
+	   
 
 	   	$(its).attr('class','small');
 
@@ -54,7 +54,7 @@ $(document).ready(function() {
 
 
 
-
+	     
 
 	   	var itp = document.createElement('p'),
 
@@ -70,7 +70,7 @@ $(document).ready(function() {
 
 	          blogid= data[i].blogid;
 
-
+	     
 
 	   	itp.appendChild(ipt);
 
@@ -84,13 +84,13 @@ $(document).ready(function() {
 
 	   	itp2.appendChild(ita2);
 
+	     
 
-
-
+	   
 
 	      $("#left").append(ith).append(itp).append(brpoint2).append(itp2);
 
-
+	   
 
 	        };
 
@@ -121,12 +121,12 @@ $(document).ready(function() {
 	});
 	$(document).on("click", ".prev", function(event) {
 	       event.preventDefault();    //prevent default action of <a>
-	        window.location.href = 'viewnextblogs.jsp?id='+startPoint;
+	        window.location.href = 'viewnextblogs.jsp?id='+startPoint; 
 
 	});
 	 $(document).on("click", ".next", function(event) {
 	       event.preventDefault();    //prevent default action of <a>
-	        window.location.href = 'viewnextblogs.jsp?id='+startPoint;
+	        window.location.href = 'viewnextblogs.jsp?id='+startPoint; 
 
 	});
 	$(document).on("click", ".mylink", function(event) {
@@ -135,7 +135,7 @@ $(document).ready(function() {
 
 	      var id = $(this).attr('id');
 
-	        window.location.href = 'viewblog.jsp?id='+id;
+	        window.location.href = 'viewblog.jsp?id='+id; 
 
 
 
